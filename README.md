@@ -64,4 +64,4 @@ The last is a safety feature that prevents script execution.  By default it is s
 
 ## References
 1. [Brice Lambson](http://brice-lambson.blogspot.ca/2012/09/simple-template-engine-for-powershell.html "Brice Lambson's"): Simple Template Engine for PowerShell.  
-2. [MailChimp/Email-Blueprints](https://github.com/mailchimp/Email-Blueprints "MailChimp - Email-Blueprints"): HTML E-Mail template [base\\_boxed\\_basic\\_query.html](https://github.com/mailchimp/email-blueprints/blob/master/responsive-templates/base_boxed_basic_query.html "base_boxed_basic_query.html") modified and used as basis for .\Templates\notificationEmail.html and .\Templates\reportEmail.html  
+2. [MailChimp/Email-Blueprints](https://github.com/mailchimp/Email-Blueprints "MailChimp - Email-Blueprints"): HTML E-Mail template [base\_boxed\_basic\_query.html](https://github.com/mailchimp/email-blueprints/blob/master/responsive-templates/base_boxed_basic_query.html "base_boxed_basic_query.html") modified and used as basis for .\Templates\notificationEmail.html and .\Templates\reportEmail.html  
