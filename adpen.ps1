@@ -13,7 +13,7 @@
     Requires  : ActiveDirectory Module
     Resources : Email template part of https://github.com/mailchimp/Email-Blueprints and modified
 .LINK
-    http://richardfleming.me/active-directory-password-expiry-notifier/
+    http://richardfleming.me/active-directory-password-expiry-notifification/
     http://github.com/richardfleming/adpen/
 #>
 
