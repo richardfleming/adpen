@@ -250,19 +250,20 @@ function Get-PasswordExpiredUsers {
         $objPwdTimeLeft = $objPwdExpires - $now
                     
         # Ignore exempt users
-        if ($ghtSettings.Email.Exempt -contains $objUser.SamAccountName) { break }
+        if ( ($ghtSettings.Email.Exempt -contains $objUser.SamAccountName) -eq $False ) { 
 
-        # Test mode email redirection
-        if ($ghtSettings.Test.Mode) {
-            $strSendTo = $ghtSettings.Test.Address
-        } else {
-            $strSendTo = $objUser.mail
-        }
-
-        # Prepare-SMTPMessage if password expires less than or on a certain day
-        if ( $objPwdTimeLeft.Days -le $ghtSettings.Pwd.NotificationStartInDays ) {
-            Send-PwdExpiryEmailToUsers $strSendTo $objUser.DisplayName $objPwdTimeLeft $now
-            Populate-Report -strDisplayName $objUser.DisplayName -objPwdTimeLeft $objPwdTimeLeft -now $now
+            # Test mode email redirection
+            if ($ghtSettings.Test.Mode) {
+                $strSendTo = $ghtSettings.Test.Address
+            } else {
+                $strSendTo = $objUser.mail
+            }
+    
+            # Prepare-SMTPMessage if password expires less than or on a certain day
+            if ( $objPwdTimeLeft.Days -le $ghtSettings.Pwd.NotificationStartInDays ) {
+                Send-PwdExpiryEmailToUsers $strSendTo $objUser.DisplayName $objPwdTimeLeft $now
+                Populate-Report -strDisplayName $objUser.DisplayName -objPwdTimeLeft $objPwdTimeLeft -now $now
+            }
         }
     }
 
